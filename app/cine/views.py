@@ -18,4 +18,4 @@ class RegistroCliente(CreateView):
     model = Cliente
     form_class = RegistroCliente
     template_name = 'cine/cliente/registro_cliente.html'
-    success_url = reverse_lazy('cine:list_pelicula')
+    success_url = reverse_lazy('cine:list.pelicula')
