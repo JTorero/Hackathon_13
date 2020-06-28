@@ -1,7 +1,6 @@
 from django.db import models
 
 # Create your models here.
-
 class Categoria(models.Model):
     id = models.AutoField(primary_key = True)
     categoria = models.CharField(max_length = 50, blank = False, null = False)
@@ -62,6 +61,3 @@ class Ticket(models.Model):
     funcion = models.ForeignKey('Funcion', on_delete = models.CASCADE)
     cliente = models.ForeignKey('Cliente', on_delete = models.CASCADE)
     butacas = models.ManyToManyField(Butaca)
-
-
-

@@ -1,8 +1,0 @@
-{% extends 'base.html' %} {% load static %} {% block title %} Actualizar Autor {% endblock %} {% block content %}
-<form method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-    <h2>¿Deseas eliminar el autor : {{ author.name }} ?</h2>
-    <button class="btn btn-danger" type="submit">Eliminar</button>
-    <a class="btn btn-info" href="{% url 'book:list.author' %}">Cancelar</a>
-</form>
-{% endblock %}
