@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'app.pelicula'
+    'app.pelicula',
+    'app.authentication'
 ]
 
 MIDDLEWARE = [
@@ -129,4 +130,4 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = 'media'
 
 LOGIN_URL = '/login'
-LOGOUT_REDIRECT_URL = '/login'
+LOGOUT_REDIRECT_URL = '/login/'

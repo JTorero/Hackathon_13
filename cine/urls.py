@@ -17,8 +17,12 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
+from app.authentication.views import Login
+from django.contrib.auth.views import LogoutView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('login/', Login.as_view(), name='login'),
+    path('logout/', LogoutView.as_view(), name='logout'),
     path('', include(('app.pelicula.urls','pelicula')))
-] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
