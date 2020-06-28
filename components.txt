@@ -1,0 +1,4 @@
+python-dotenv
+Django
+psycopg2
+Pillow

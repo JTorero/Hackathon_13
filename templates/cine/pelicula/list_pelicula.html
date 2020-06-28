@@ -1,0 +1,28 @@
+{%extends 'base.html' %}
+
+{% block title %} Peliculas {% endblock %}
+
+{% block content %}
+<table class="table">
+    <thead>
+        <tr>
+            <th>N°</th>
+            <th>Titulo</th>
+            <th>Duracion</th>
+            <th>Reparto</th>
+            <th>Categoria</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for pelicula in peliculas %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{pelicula.titulo}}</td>
+                <td>{{pelicula.duracion}} minutos </td>
+                <td>{{pelicula.reparto}}</td>
+                <td>{{pelicula.categoria}}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
