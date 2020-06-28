@@ -1,0 +1,46 @@
+{% extends 'base.html' %} {% load static %} {% block title %} Crear Pelicula {% endblock %} {% block content %}
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="row">
+        <div class="col-sm-3">
+            <img src="{% static 'static/avatar/default_avatar.png' %}" class="rounded float-left avatar mb-4"> {{ form.avatar }}
+        </div>
+        <div class="col-sm-9">
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">
+                        {{ form.name.label }}
+                    </label>
+                <div class="col-sm-8">
+                    {{ form.name }}
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">
+                        {{ form.last_name.label }}
+                    </label>
+                <div class="col-sm-8">
+                    {{ form.last_name }}
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">
+                        {{ form.country.label }}
+                    </label>
+                <div class="col-sm-8">
+                    {{ form.country }}
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">
+                        {{ form.description.label }}
+                    </label>
+                <div class="col-sm-8">
+                    {{ form.description }}
+                </div>
+            </div>
+            <button class="btn btn-primary" type="submit">Crear</button>
+            <a class="btn btn-info" href="{% url 'book:list.author' %}">Cancelar</a>
+        </div>
+    </div>
+</form>
+{% endblock %}

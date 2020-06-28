@@ -15,8 +15,9 @@ class Pelicula(models.Model):
     duracion = models.IntegerField(blank = False, null = False)
     sinopsis = models.TextField(blank = False, null = False)
     reparto = models. CharField(max_length = 500, blank = True, null = True)
-    portada = models.ImageField(upload_to = 'pictures/pelicula', blank = True, null = True)
+    portada = models.ImageField(upload_to='pictures/pelicula', blank = True, null = True)
     categoria = models.ForeignKey('Categoria',on_delete = models.CASCADE )
+
     def __str__(self):
         return self.titulo
 
@@ -42,7 +43,7 @@ class Funcion(models.Model):
     tarifa = models.IntegerField( blank = False, null = False)
 
     def __str__(self):
-        return self.Pelicula.titulo + ' Hora: ' + str(self.fecha_hora)
+        return self.pelicula.titulo + ' Hora: ' + str(self.fecha_hora) + str(self.tarifa)
 
 class Cliente(models.Model):
     id = models.AutoField(primary_key = True)
@@ -52,8 +53,10 @@ class Cliente(models.Model):
     genero = models.CharField(max_length = 1)
     fecha_nacimiento = models.DateField()
     correo = models.EmailField()
+
     def __str__(self):
         return self.dni + ' - ' + self.nombres
+
 class Ticket(models.Model):
     id = models.AutoField(primary_key = True)
     funcion = models.ForeignKey('Funcion', on_delete = models.CASCADE)
