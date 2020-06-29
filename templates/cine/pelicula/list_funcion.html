@@ -1,0 +1,26 @@
+{%extends 'base.html' %}
+
+{% block title %} Funciones {% endblock %}
+
+{% block content %}
+<table class="table">
+    <thead>
+        <tr>
+            <th>N°</th>
+            <th>Sala</th>
+            <th>fecha y Hora</th>
+            <th>Tarifa</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for funcion in funciones %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{funcion.sala}}</td>
+                <td>{{funcion.fecha_hora}} minutos </td>
+                <td>{{funcion.tarifa}}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

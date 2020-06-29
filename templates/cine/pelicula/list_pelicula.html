@@ -7,10 +7,10 @@
     <thead>
         <tr>
             <th>N°</th>
-            <th>Titulo</th>
-            <th>Duracion</th>
-            <th>Reparto</th>
-            <th>Categoria</th>
+            <th>titulo</th>
+            <th>duracion</th>
+            <th>reparto</th>
+            <th>categoria</th>
         </tr>
     </thead>
     <tbody>
@@ -21,6 +21,13 @@
                 <td>{{pelicula.duracion}} minutos </td>
                 <td>{{pelicula.reparto}}</td>
                 <td>{{pelicula.categoria}}</td>
+                <td>
+                    <div class="btn-group btn-group-sm">
+                        <a href="{% url 'cine:list.funcion' pelicula.id %}" class="btn btn-warning">
+                            <i class="fa fa-edit"></i>
+                        </a>
+                    </div>
+                </td>
             </tr>
         {% endfor %}
     </tbody>
