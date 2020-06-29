@@ -4,3 +4,4 @@ crearse un entorno virtual
 Rutas API:
     - cine/list_pelicula
     - registro/registro_cliente
+    - /cine/list_funcion/
