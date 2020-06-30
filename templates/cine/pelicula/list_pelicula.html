@@ -1,27 +1,30 @@
-{%extends 'base.html' %}
-
-{% block title %} Peliculas {% endblock %}
-
-{% block content %}
+{%extends 'base.html' %} {% block title %} Peliculas {% endblock %} {% block content %}
 <table class="table">
     <thead>
         <tr>
             <th>N°</th>
-            <th>Titulo</th>
-            <th>Duracion</th>
-            <th>Reparto</th>
-            <th>Categoria</th>
+            <th>titulo</th>
+            <th>duracion</th>
+            <th>reparto</th>
+            <th>categoria</th>
         </tr>
     </thead>
     <tbody>
         {% for pelicula in peliculas %}
-            <tr>
-                <td>{{forloop.counter}}</td>
-                <td>{{pelicula.titulo}}</td>
-                <td>{{pelicula.duracion}} minutos </td>
-                <td>{{pelicula.reparto}}</td>
-                <td>{{pelicula.categoria}}</td>
-            </tr>
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{pelicula.titulo}}</td>
+            <td>{{pelicula.duracion}} minutos </td>
+            <td>{{pelicula.reparto}}</td>
+            <td>{{pelicula.categoria}}</td>
+            <td>
+                <div class="btn-group btn-group-sm">
+                    <a href="{% url 'cine:list.funcion' pelicula.id %}" class="btn btn-warning">
+                        <i class="fa fa-edit"></i>
+                    </a>
+                </div>
+            </td>
+        </tr>
         {% endfor %}
     </tbody>
 </table>

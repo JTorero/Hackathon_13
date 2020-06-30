@@ -1,0 +1,43 @@
+{% extends 'base.html' %} {% block title %} Listar Clientes {% endblock %} {% block content %}
+<div class="row">
+    <div class="col">
+        <h3 class="one">Listado</h3>
+    </div>
+    <div class="col-autor">
+        <a class="btn btn-primary pull-right" href="{% url 'book:create.author' %}">
+            <i class="fa fa-add"></i> Crear Cliente
+        </a>
+    </div>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>DNI</th>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>Fecha_Nacimiento</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for client in clients %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ cliente.dni }}</td>
+            <td>{{ cliente.nombres|upper }}</td>
+            <td>{{ cliente.apellidos|upper }}</td>
+            <td>{{ cliente.fecha_nacimiento }}</td>
+            <td>
+                <div class="btn-group btn-group-sm">
+                    <a class="btn btn-warning" href="{% url 'book:update.author' author.id %}">
+                        <i class="fa fa-edit"></i>
+                    </a>
+                    <a class="btn btn-danger" href="{% url 'book:delete.author' author.id %}">
+                        <i class="fa fa-trash"></i>
+                    </a>
+                </div>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

@@ -1,10 +1,5 @@
 from django.forms import ModelForm, TextInput, DateInput, EmailInput
-from .models import Pelicula, Cliente
-
-class PeliculaForm(ModelForm):
-    class Meta:
-        model = Pelicula
-        fields = ['titulo', 'duracion', 'sinopsis', 'reparto', 'portada', 'categoria']
+from .models import Cliente, Funcion, Pelicula
 
 class RegistroCliente(ModelForm):
     class Meta:
@@ -48,6 +43,7 @@ class RegistroCliente(ModelForm):
             'fecha_nacimiento': DateInput(
                 attrs={
                     'class': 'form-control',
+                    'placeholder':'Año - mes - dia',
                     'id': 'fecha_nacimiento'
                 }
             ),
@@ -59,3 +55,13 @@ class RegistroCliente(ModelForm):
                 }
             )
         }
+
+class FuncionForm(ModelForm):
+    class Meta:
+        model = Funcion
+        fields = ['sala','pelicula', 'fecha_hora', 'tarifa']
+
+class Peliculaform(ModelForm):
+    class Meta:
+        model = Pelicula
+        fields = ['titulo', 'duracion', 'sinopsis', 'reparto', 'portada', 'categoria']
