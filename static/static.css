@@ -1,18 +1,18 @@
 body {
-    background: url('https://source.unsplash.com/twukN12EN7c/1920x1080') no-repeat center center fixed;
+    background: url(../fondo/fondo-cine1.jfif) center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
 }
-  
+
 .card-center {
     display: grid;
     justify-content: center;
     align-content: center;
 }
-  
-.card-center > img {
+
+.card-center>img {
     width: 150px;
     height: 130px;
 }
